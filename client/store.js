@@ -1,0 +1,36 @@
+import { applyMiddleware, createStore as reduxCreateStore } from 'redux';
+import { createLogger } from 'redux-logger';
+import reducers from './reducers';
+import thunk from 'redux-thunk';
+import { routerMiddleware } from 'react-router-redux'
+import { browserHistory } from 'react-router';
+
+const middlewares = [
+  thunk,
+  routerMiddleware(browserHistory)
+];
+
+// Add state logger
+if (process.env.NODE_ENV !== 'production') {
+  try {
+    middlewares.push(createLogger());
+  } catch (e) {}
+}
+
+export function createStore(state) {
+  return reduxCreateStore(
+    reducers,
+    state,
+    applyMiddleware.apply(null, middlewares)
+  );
+}
+
+export let store = null;
+export function getStore() { return store; }
+export function setAsCurrentStore(s) {
+  store = s;
+  if (process.env.NODE_ENV !== 'production'
+    && typeof window !== 'undefined') {
+    window.store = store;
+  }
+}

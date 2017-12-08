@@ -1,0 +1,30 @@
+.list {
+
+}
+
+.item {
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+  padding: 6px 14px;
+  color: #555;
+}
+
+.item:hover {
+  background: $highlightColor;
+  color: #000;
+  cursor: pointer;
+}
+
+.elo {
+  float: right;
+}
+
+.name {
+  float: left;
+}
+
+.line:after {
+  content: "";
+  display: table;
+  clear: both;
+}

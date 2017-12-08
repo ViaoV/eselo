@@ -1,0 +1,79 @@
+body {
+  background-color: #f7f7f7;
+  padding: 50px;
+}
+
+:global(#app) {
+  padding: 0 px(100);
+}
+
+.appContainer{
+  display: grid;
+  margin-top: 80px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 1px 1px #e0e0e0;
+  grid-template-columns: [col] 200px [col] auto;
+  grid-template-rows: [row] 30px [row] auto;
+  border-bottom: 1px solid #ccc;
+}
+
+.appHeader {
+  grid-column: 1 / 6;
+  grid-row: row;
+  border: 1px solid #45484d; /* Old browsers */
+  background: #45484d; /* Old browsers */
+  background: -moz-linear-gradient(top, #45484d 0%, #000000 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #45484d 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #45484d 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+.navigationWrapper {
+  grid-column: 1 / 2;
+  grid-row: row 2;
+  padding: 8px 0px;
+  color: #555;
+
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+  border-right: 1px solid #ccc;
+  /* Permalink - use to edit and share this gradient:
+   * http://colorzilla.com/gradient-editor/#45484d+0,000000+100;Black+3D+%231 */
+}
+
+.appBody {
+  grid-column: 2 / 6;
+  grid-row: row 2;
+  padding: 25px;
+}
+
+.navigation ul li a {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  padding: 4px 10px;
+}
+
+.navigation li i {
+  margin-right: 10px;
+}
+
+.active {
+  display: block;
+  color: #000;
+  border-top: 1px solid #ddd;
+  background: #222;
+  color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.header {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 4px 6px;
+}
