@@ -1,0 +1,38 @@
+.players {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.player {
+  padding: 10px 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  text-align: center;
+}
+
+.playerColor {
+  font-size: 12px;
+  color: #888;
+}
+
+.name {
+  font-size: 18px;
+}
+
+.vs {
+  font-size: 22px;
+  line-height: 2;
+  font-weight: bold;
+  padding: 0 25px;
+}
+
+
+.outcome {
+  font-size: 24px;
+  text-align: center;Z
+  margin-top: 20px;
+  margin-bottom: 40px;
+}

@@ -8,7 +8,7 @@ export default (props) => (
   <div className={ navigation }>
     <ul>
       <li>
-        <Link to="/" activeClassName={ active }> <i className="fa fa-home"></i> Home</Link>
+        <Link to="/"> <i className="fa fa-home"></i> Home</Link>
       </li>
       <li className={ header }>
         Players

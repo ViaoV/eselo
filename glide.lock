@@ -1,55 +1,63 @@
-hash: 7e575e8d8974ce229b2a5aa3e908468b483a5dbdd36d905e392980a3b8d4e481
-updated: 2017-06-15T11:24:56.989567422+05:00
+hash: 589d3fd1ab15d306a78ae118c3e64c287e9f2bb3446e8a58b86ef29d796f8dfa
+updated: 2017-12-11T12:37:06.899553671-05:00
 imports:
 - name: github.com/codegangsta/cli
-  version: 347a9884a87374d000eec7e6445a34487c1f4a2b
+  version: 119bb6564841921ce6f1401e0f5d75317bdd9f4d
 - name: github.com/dgrijalva/jwt-go
-  version: 2268707a8f0843315e2004ee4f1d021dc08baedf
+  version: dbeaa9332f19a944acb5736b4456cfcc02140e29
 - name: github.com/dlclark/regexp2
-  version: 3f97b6a39134e6bd88a72d1388d1632e60d83ef6
+  version: 7632a260cbaf5e7594fc1544a503456ecd0827f1
   subpackages:
   - syntax
 - name: github.com/dop251/goja
-  version: 09718839f5255969d0dcaef99119b867d187ecea
+  version: 31b7e71a9bfb2df472317e82199aa3b726554c1f
   subpackages:
   - ast
   - file
   - parser
   - token
 - name: github.com/dop251/goja_nodejs
-  version: 2fc1e6bbfc494e36dd9a0b3e735a4babc538f51f
+  version: adff31b136e6b7e044712aab7236a775e1bd085e
   subpackages:
   - console
   - eventloop
   - require
   - util
 - name: github.com/elazarl/go-bindata-assetfs
-  version: 9a6736ed45b44bf3835afeebb3034b57ed329f3e
+  version: 30f82fa23fd844bd5bb1e5f216db87fd77b5eb43
 - name: github.com/fatih/structs
-  version: a720dfa8df582c51dee1b36feabb906bde1588bd
+  version: f5faa72e73092639913f5833b75e1ac1d6bc7a63
 - name: github.com/itsjamie/go-bindata-templates
-  version: 65d795d0c74021e19b2ebadf3c83c01a8290a405
+  version: 78f87e838df0fb89dbcd26e1489f988cd7bc3bb8
+- name: github.com/jinzhu/gorm
+  version: 0a51f6cdc55d1650d9ed3b4c13026cfa9133b01e
+  subpackages:
+  - dialects/sqlite
+- name: github.com/jinzhu/inflection
+  version: 1c35d901db3da928c72a72d8458480cc9ade058f
 - name: github.com/jteeuwen/go-bindata
   version: a0ff2567cfb70903282db057e799fd826784d41d
 - name: github.com/labstack/echo
-  version: a8b6864be328fcb5c2d96d32c75b750f84e0e4be
+  version: 0473c51f1dbd83487effce00702571d19033a6e5
   subpackages:
   - middleware
 - name: github.com/labstack/gommon
-  version: f72d3c883f8ea180da8f085dd320804c41332ad1
+  version: 57409ada9da0f2afad6664c49502f8c50fbd8476
   subpackages:
   - bytes
   - color
   - log
   - random
 - name: github.com/mattn/go-colorable
-  version: d228849504861217f796da67fae4f6e347643f15
+  version: 6fcc0c1fd9b620311d821b106a400b35dc95c497
 - name: github.com/mattn/go-isatty
-  version: 30a891c33c7cde7b02a981314b4228ec99380cca
+  version: 6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c
+- name: github.com/mattn/go-sqlite3
+  version: d5ffb5c0cca8778699a929b236766f4a7af674e8
 - name: github.com/nu7hatch/gouuid
   version: 179d4d0c4d8d407a32af483c2354df1d2c91e6c3
 - name: github.com/olebedev/config
-  version: afea898d27c7d17376ecc60c7c2e73c76b40060e
+  version: 9a10d05a33a8b9e828f20491e21e8927dec35f72
 - name: github.com/olebedev/gojax
   version: bb153be84336f26925890502929cc363477df7ad
   subpackages:
@@ -58,27 +66,26 @@ imports:
 - name: github.com/olebedev/on
   version: f65b7c9823a4c30797e9ad3c51d559a36ff8d542
 - name: github.com/pkg/errors
-  version: 248dadf4e9068a0b3e79f02ed0a610d935de5302
+  version: 8842a6e0cc595d1cc9d931f6c875883967280e32
 - name: github.com/valyala/bytebufferpool
   version: e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7
 - name: github.com/valyala/fasttemplate
-  version: d090d65668a286d9a180d43a19dfdc5dcad8fe88
+  version: dcecefd839c4193db0d35b88ec65b4c12d360ab0
 - name: golang.org/x/crypto
-  version: bed12803fa9663d7aa2c2346b0c634ad2dcd43b7
+  version: 94eea52f7b742c7cbe0b03b22f0c4c8631ece122
   subpackages:
   - acme
   - acme/autocert
 - name: golang.org/x/net
-  version: 41bba8d80bbfab43231ffdf4c210037baae5f6a3
+  version: dc871a5d77e227f5bbf6545176ef3eeebf87e76e
   subpackages:
   - context
-  - context/ctxhttp
 - name: golang.org/x/sys
-  version: 7a6e5648d140666db5d920909e082ca00a87ba2c
+  version: b8f5ef32195cae6470b728e8ca677f0dbed1a004
   subpackages:
   - unix
 - name: golang.org/x/text
-  version: 44f4f658a783b0cee41fe0a23b8fc91d9c120558
+  version: 3b24cac7bc3a458991ab409aa2a339ac9e0d60d6
   subpackages:
   - cases
   - collate
@@ -89,5 +96,5 @@ imports:
   - transform
   - unicode/norm
 - name: gopkg.in/yaml.v2
-  version: 4c78c975fe7c825c6d1466c42be594d1d6f3aba6
+  version: 287cf08546ab5e7e37d55a84f7ed3fd1db036de5
 testImports: []

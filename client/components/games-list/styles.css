@@ -1,0 +1,54 @@
+.gamesList {
+}
+
+.gameListItem {
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+  padding: 8px 12px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.gameListItem:hover {
+  background: #fafafa;
+}
+
+.players  {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.white, .black {
+  flex: 1;
+}
+
+.black {
+  text-align: right;
+}
+
+.playerName {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.playerColor {
+  display: inline-block;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #999;
+  padding: 0 5px;
+}
+
+.outcome {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.date {
+  font-size: 10px;
+  color: #888;
+}

@@ -13,8 +13,8 @@ type (
 
 	Game struct {
 		gorm.Model
-		WhitePlayer      Player `gorm:"ForeignKey:WhitePlayerID"`
-		BlackPlayer      Player `gorm:"ForeignKey:BlackPlayerID"`
+		WhitePlayer      Player `gorm:"ForeignKey:WhitePlayerID" json:"whitePlayer"`
+		BlackPlayer      Player `gorm:"ForeignKey:BlackPlayerID" json:"blackPlayer"`
 		WhitePlayerID    int    `json:"whitePlayerId"`
 		BlackPlayerID    int    `json:"blackPlayerId"`
 		WhiteStartingELO int    `json:"whiteStartingElo"`

@@ -1,0 +1,19 @@
+.keyval {
+  width: 100%;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.key {
+  display: inline-block;
+  width: 200px;
+  color: #888;
+}
+
+.value {
+  display: inline-block;
+}
+
+.row {
+  padding: 25px;
+}

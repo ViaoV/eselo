@@ -19,3 +19,7 @@
 .panel form {
   padding: 15px;
 }
+
+.panel + .panel {
+  margin-top: 25px;
+}

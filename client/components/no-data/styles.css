@@ -1,0 +1,13 @@
+.noData {
+  text-align: center;
+  font-size: 18px;
+  padding: 25px;
+  color: #444;
+  font-weight: bold;
+}
+
+.noData i {
+  font-size: 38px;
+  margin-bottom: 10px;
+  color: #ccc;
+}

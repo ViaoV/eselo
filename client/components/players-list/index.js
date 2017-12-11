@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { loadPlayers } from '../../actions/players';
 import ListItem from './list-item';
+import NoData from '../no-data';
 
 
 class PlayersList extends Component {
@@ -15,7 +16,7 @@ class PlayersList extends Component {
   render() {
     if (this.props.players.length == 0) {
       return (
-        <div> NO players</div>
+        <NoData message="No players" />
       )
     }
     return (

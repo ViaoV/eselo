@@ -53,3 +53,8 @@ img {
 input, textarea {
   border: 1px solid #eee;
 }
+
+select {
+  width: 100%;
+  padding: 4px 8px;
+}

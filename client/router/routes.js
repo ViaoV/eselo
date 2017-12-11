@@ -8,6 +8,8 @@ import CreatePlayer from '../components/create-player';
 import ViewPlayer from '../components/view-player';
 import ViewPlayers from '../components/view-players';
 import CreateGame from '../components/create-game';
+import ViewGames from '../components/view-games';
+import ViewGame from '../components/view-game';
 
 /**
  * Returns configured routes for different
@@ -30,12 +32,14 @@ export default ({store, first}) => {
   }
   return (
     <Route path="/" component={App}>
-      <IndexRoute component={Homepage} onEnter={w(Homepage.onEnter)}/>
+      <IndexRoute component={Homepage} />
       <Route path="/usage" component={Usage} onEnter={w(Usage.onEnter)}/>
       <Route path="/players/new" component={ CreatePlayer } />
       <Route path="/players/:id" component={ ViewPlayer } />
       <Route path="/players" component={ ViewPlayers } />
       <Route path="/games/new" component={ CreateGame } />
+      <Route path="/games/:id" component={ ViewGame } onEnter={w(ViewGame.onEnter)} />
+      <Route path="/games" component={ ViewGames } />
       {/* Server redirect in action */}
       <Redirect from="/docs" to="/usage" />
       <Route path="*" component={NotFound} onEnter={w(NotFound.onEnter)}/>

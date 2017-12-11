@@ -3,6 +3,7 @@ import GameForm from '../game-form';
 import Panel from '../panel';
 import { connect } from 'react-redux';
 import { createGame, loadGames } from '../../actions/games';
+import { browserHistory } from 'react-router';
 
 class CreateGame extends Component {
   constructor() {
@@ -12,7 +13,8 @@ class CreateGame extends Component {
   submit(values) {
     values.blackPlayerId = parseInt(values.blackPlayerId);
     values.whitePlayerId = parseInt(values.whitePlayerId);
-    this.props.createGame(values);
+    this.props.createGame(values)
+      .then((game) => browserHistory.push(`/games/${game.ID}`));
   }
   render() {
     this.props.loadGames();

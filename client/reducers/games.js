@@ -1,11 +1,15 @@
 import { 
   GAMES_CREATE,
   GAMES_LOAD,
+  GAMES_GET
 } from '../actions/games';
 
 const initialState = {
   all: [],
-  game: {}
+  game: {
+    whitePlayer: {},
+    blackPlayer: {}
+  }
 }
 
 export default function(state = initialState, action) {
@@ -19,6 +23,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         game: action.data
+      }
+    case GAMES_GET:
+      return {
+        ...state,
+        game:action.data
       }
     default:
       return state;
