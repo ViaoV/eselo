@@ -48,7 +48,7 @@ class ViewGame extends Component {
           <div className={ css.player }>
             <div className={ css.playerColor}>BLACK</div>
             <div className={ css.name }>{ this.props.game.blackPlayer.name }</div>
-            <EloChange from={ this.props.game.whiteEndingElo } to={ this.props.game.blackEndingElo } />
+            <EloChange from={ this.props.game.blackStartingElo } to={ this.props.game.blackEndingElo } />
           </div>
         </div>
         <Panel header="Matchups">
