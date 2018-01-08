@@ -1,14 +1,16 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"io"
 	"net/http"
+	"os"
 
 	"github.com/elazarl/go-bindata-assetfs"
 	"github.com/itsjamie/go-bindata-templates"
 	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/sqlite"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"github.com/nu7hatch/gouuid"
@@ -72,7 +74,12 @@ func NewApp(opts ...AppOptions) *App {
 	}))
 
 	// Initialize the application
-	db, err := gorm.Open("sqlite3", "data.db")
+	connStr := fmt.Sprintf("host=%s user=%s dbname=eselo sslmode=disable password=%s",
+		os.Getenv("RDS_HOST"),
+		os.Getenv("RDS_USER"),
+		os.Getenv("RDS_PASS"))
+	fmt.Println(connStr)
+	db, err := gorm.Open("postgres", connStr)
 	if err != nil {
 		panic("failed to connect database")
 	}

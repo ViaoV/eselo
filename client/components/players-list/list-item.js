@@ -20,7 +20,7 @@ export default class ListItem extends Component {
       <div className={ item } onClick={ this.click }>
         <div className={ line }>
           <div className={ name }>
-            { player.name }
+            <i className="fa fa-user"></i> { player.name }
           </div>
           <div className={ elo }>
             { player.elo }

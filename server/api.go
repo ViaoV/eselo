@@ -11,6 +11,7 @@ type API struct{}
 // Bind attaches api routes
 func (api *API) Bind(group *echo.Group) {
 	group.GET("/v1/conf", api.ConfHandler)
+	group.GET("/v1/players/top", api.topPlayers)
 	group.GET("/v1/players/:playerId/games", api.playerGames)
 	group.GET("/v1/players/:id", api.getPlayer)
 	group.GET("/v1/players", api.listPlayers)
@@ -31,6 +32,13 @@ func (api *API) listPlayers(c echo.Context) error {
 	app := c.Get("app").(*App)
 	var players []Player
 	app.DB.Order("elo desc").Find(&players)
+	return c.JSON(200, players)
+}
+
+func (api *API) topPlayers(c echo.Context) error {
+	app := c.Get("app").(*App)
+	var players []Player
+	app.DB.Order("elo desc").Limit(3).Find(&players)
 	return c.JSON(200, players)
 }
 

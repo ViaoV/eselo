@@ -24,6 +24,10 @@
   flex: 1;
 }
 
+.white {
+  text-align: left;
+}
+
 .black {
   text-align: right;
 }
@@ -44,8 +48,18 @@
 
 .outcome {
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
+}
+
+.outcome i {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+.game {
+  text-align: center;
 }
 
 .date {

@@ -6,11 +6,15 @@
 }
 
 .header {
-  font-size: 22px;
+  font-size: 17px;
   margin-bottom: 5px;
   padding-bottom: 5px;
   padding: 10px;
   font-weight: 300;
+  color: #888;
+  text-transform: uppercase;
+  border-bottom: 1px solid #f0f0f0;
+  background: #f9f9f9;
 }
 
 .body {

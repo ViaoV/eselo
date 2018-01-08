@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import css from './styles';
 import { browserHistory } from 'react-router';
 import EloChange from '../elo-change';
@@ -38,15 +39,19 @@ const GameListItem = (props) => {
           </div>
           <EloChange from={ game.whiteStartingElo } to={ game.whiteEndingElo } />
         </div>
-        <div>
+        <div className={ css.game }>
           { game.outcome === 'white' &&
               <div className={ css.outcome }>
-                { game.whitePlayer.name } Beats { game.blackPlayer.name }
+                { game.whitePlayer.name }
+                <i className="fa fa-arrow-right"></i>
+                { game.blackPlayer.name }
               </div>
           }
           { game.outcome === 'black' &&
               <div className={ css.outcome }>
-                { game.blackPlayer.name } Beats { game.whitePlayer.name }
+                { game.blackPlayer.name }
+                <i className="fa fa-arrow-right"></i>
+                { game.whitePlayer.name }
               </div>
           }
           { game.outcome === 'stale' &&
@@ -55,7 +60,7 @@ const GameListItem = (props) => {
               </div>
           }
           <div className={css.date}>
-            { game.CreatedAt }
+            { moment(game.CreatedAt).format('MM/DD/YY h:m:s a') }
           </div>
         </div>
         <div className={ css.black }>

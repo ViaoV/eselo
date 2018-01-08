@@ -31,3 +31,11 @@ export function getPlayer(id) {
     });
   }
 }
+
+export function topPlayers() {
+  return (dispatch) => {
+    query('players/top').then((players) => {
+      dispatch({ type: PLAYERS_LOAD, data: players });
+    });
+  }
+}

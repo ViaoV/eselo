@@ -7,15 +7,32 @@ body {
   padding: 0 px(100);
 }
 
-.appContainer{
-  display: grid;
+.appWrapper {
+  margin: auto;
   margin-top: 80px;
+  width: 800px;
+}
+
+.brand {
+  font-weight: 900;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.brand span {
+  font-size: 18px;
+  color: #999;
+  font-weight: 500;
+}
+
+.appContainer {
+  display: grid;
   border-radius: 4px;
+  border-bottom: 1px solid #ccc;
   overflow: hidden;
   box-shadow: 1px 1px #e0e0e0;
   grid-template-columns: [col] 200px [col] auto;
   grid-template-rows: [row] 30px [row] auto;
-  border-bottom: 1px solid #ccc;
 }
 
 .appHeader {
