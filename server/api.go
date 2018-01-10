@@ -127,7 +127,7 @@ func (api *API) createGame(c echo.Context) error {
 func (api *API) listGames(c echo.Context) error {
 	app := c.Get("app").(*App)
 	var games []Game
-	app.DB.Preload("WhitePlayer").Preload("BlackPlayer").Find(&games)
+	app.DB.Order("created_at DESC").Preload("WhitePlayer").Preload("BlackPlayer").Find(&games)
 	return c.JSON(200, games)
 }
 
@@ -139,7 +139,7 @@ func (api *API) playerGames(c echo.Context) error {
 
 	app := c.Get("app").(*App)
 	var games []Game
-	app.DB.Where("white_player_id = ? OR black_player_id = ?", playerId, playerId).
+	app.DB.Order("created_at DESC").Where("white_player_id = ? OR black_player_id = ?", playerId, playerId).
 		Preload("WhitePlayer").
 		Preload("BlackPlayer").
 		Find(&games)
