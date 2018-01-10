@@ -5,6 +5,6 @@
 /server/bindata.go
 /server/data/static/build
 /vendor
-/dist
+dist/
 .pid
 .DS_Store
