@@ -57,5 +57,8 @@ input, textarea {
 select {
   width: 100%;
   padding: 4px 8px;
+  margin: 0;
+  background: #fff;
+  border: 1px solid #eee;
 }
 

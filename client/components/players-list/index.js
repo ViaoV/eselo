@@ -21,8 +21,8 @@ class PlayersList extends Component {
     }
     return (
       <div>
-        { this.props.players.map(p =>
-          <ListItem key={ p.ID } player={ p } />
+        { this.props.players.map((p, idx) =>
+          <ListItem key={ p.ID } player={ p } rank={ idx + 1 }  />
         )}
       </div>
     );

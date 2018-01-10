@@ -2,6 +2,11 @@
 
 }
 
+.rank {
+  display: inline-block;
+  width: 40px;
+ }
+
 .item {
   font-size: 14px;
   border-bottom: 1px solid #eee;
@@ -16,15 +21,13 @@
 }
 
 .elo {
-  float: right;
 }
 
 .name {
-  float: left;
+  flex: 2;
 }
 
-.line:after {
-  content: "";
-  display: table;
-  clear: both;
+.line {
+  display: flex;
+  flex-flow: row;
 }
