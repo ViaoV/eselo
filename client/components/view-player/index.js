@@ -2,13 +2,16 @@ import React, { Component } from 'react'
 import PlayerInfo from './info';
 import { connect } from 'react-redux';
 import { getPlayer } from '../../actions/players';
-import { loadPlayerGames } from '../../actions/games';
+import { loadPlayerGames, clearGames } from '../../actions/games';
 import GameList from '../games-list'; 
 import Panel from '../panel';
 import ReactHighstock from 'react-highcharts/ReactHighstock.src';
 import NoData from '../no-data';
 
 class ViewPlayer extends Component {
+  componentWillMount() {
+    this.props.clearGames();
+  }
   componentDidMount() {
     this.props.getPlayer(this.props.params.id);
     this.props.loadPlayerGames({ID: this.props.params.id})
@@ -18,13 +21,19 @@ class ViewPlayer extends Component {
     return (
       <div>
         <Panel header="Player Information">
-          <PlayerInfo player={ player } games={ games } />
+          { games !== false && player !== false &&
+            <PlayerInfo player={ player } games={ games } />
+          }
         </Panel>
         <Panel header="Games">
-          <GameList games={this.props.games} />
+          { games !== false && 
+            <GameList games={ games } />
+          }
         </Panel>
         <Panel header="Elo Over Time">
-          <PlayerEloGraph games={this.props.games} playerId={ this.props.params.id } />
+          { games !== false && 
+            <PlayerEloGraph games={ games } playerId={ this.props.params.id } />
+          }
         </Panel>
       </div>
     )
@@ -38,7 +47,8 @@ const mapState = (store) => ({
 
 const mapActions = {
   getPlayer,
-  loadPlayerGames
+  loadPlayerGames,
+  clearGames
 }
 
 export default connect(mapState, mapActions)(ViewPlayer);
@@ -65,7 +75,6 @@ class PlayerEloGraph extends Component {
   graphData() {
     return this.props.games.map(g => {
       const metric = [new Date(g.CreatedAt).getTime()]
-      console.log(g, this.props.playerId);
       if (g.whitePlayerId.toString() === this.props.playerId.toString()) {
         metric.push(g.whiteEndingElo);
       }

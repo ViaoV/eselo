@@ -46,7 +46,7 @@ export default class GamesList extends Component {
   render() {
     if (this.props.games.length === 0) {
       return (
-        <NoData message="Loading" />
+        <NoData message="No games played" />
       );
     }
     return (

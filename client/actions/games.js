@@ -2,6 +2,7 @@ import query from './query';
 export const GAMES_CREATE = 'games:create';
 export const GAMES_LOAD = 'games:load';
 export const GAMES_GET = 'games:get';
+export const GAMES_CLEAR = 'games:clear';
 
 export function createGame(data) {
   return (dispatch) => {
@@ -16,6 +17,7 @@ export function createGame(data) {
 
 export function loadGames() {
   return (dispatch) => {
+    clearGames();
     fetch('/api/v1/games').then((r) => {
       return r.json();
     }).then((games) => {
@@ -49,10 +51,17 @@ export function getGame(id) {
 
 export function loadPlayerGames(player) {
   return (dispatch) => {
+		clearGames();
     fetch(`/api/v1/players/${player.ID}/games`).then((r) => {
       return r.json();
     }).then((games) => {
       dispatch({ type: GAMES_LOAD, data: games });
     });
+  };
+}
+
+export function clearGames() {
+  return (dispatch) => {
+    dispatch({ type: GAMES_CLEAR });
   };
 }

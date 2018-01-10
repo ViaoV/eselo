@@ -1,11 +1,12 @@
 import { 
   GAMES_CREATE,
   GAMES_LOAD,
-  GAMES_GET
+  GAMES_GET,
+  GAMES_CLEAR
 } from '../actions/games';
 
 const initialState = {
-  all: [],
+  all: false,
   game: {
     whitePlayer: {},
     blackPlayer: {}
@@ -28,6 +29,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         game:action.data
+      }
+    case GAMES_CLEAR:
+      return {
+        ...state,
+        all: false
       }
     default:
       return state;
